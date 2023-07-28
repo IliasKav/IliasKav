@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Us - Seafood Greek Tavern</title>
+
+  <link rel="stylesheet" type="text/css" href="about.css" /> 
+
+  <style>
+    /* CSS styles for the page */
+    /* Add your custom styles here */
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>A few things about us.</h1>
+  </header>
+
+  <nav class="navbar">
+    <a class="navbar-brand" href="#">Lakis Tavern</a>
+    <ul class="navbar-links">
+      <li class="navbar-link-item"><a href="index.html">Home</a></li>
+      <li class="navbar-link-item"><a href="about.html">About</a></li>
+      <li class="navbar-link-item"><a href="menu.html">Menu</a></li>
+      <li class="navbar-link-item"><a href="contact.html">Contact</a></li> 
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Our Story</h2>
+      <p>First opening in 1980, at the most central place of the beach street, Lakis' fish tavern is still standing strong serving old acquaintances and newcomers alike. Customers can experience the calmness of the sea and feel the salty breeze while enjoying our cuisine.</p>
+      <p>More than 40 years later the quality still remains intact attracting not only people from all over the world, but also loyal locals that eat at our restaurant winter and summer.</p>
+      <p>Below is a gallery of some of our dishes and also some of the famous Greek people that have regularly visited our tavern.</p>    
+    </section>
+
+    <section>
+      <h2>Gallery</h2>
+      <div id="gallery" class="gallery">
+        <!-- <img src="./images/LakisEntrance.jpg" alt="Image 1" onclick="openLightbox('./images/LakisEntrance.jpg')">
+        <img src="./images/psaria.jpg" alt="Image 2" onclick="openLightbox('./images/psaria.jpg')">
+        <img src="./images/bougiourdi.jpg" alt="Image 3" onclick="openLightbox('./images/bougiourdi.jpg')">
+        <img src="./images/melitzana.jpg" alt="Image 4" onclick="openLightbox('./images/melitzana.jpg')">
+        <img src="./images/saganaki shrimp.JPG" alt="Image 5" onclick="openLightbox('./images/saganaki shrimp.JPG')">
+        <img src="./images/shrimpspaggeti.JPG" alt="Image 6" onclick="openLightbox('./images/shrimpspaggeti.JPG')">
+        <img src="./images/sunset.jpg" alt="Image 7" onclick="openLightbox('./images/sunset.jpg')">
+        <img src="./images/euro2004.jpg" alt="Image 8" onclick="openLightbox('./images/euro2004.jpg')"> -->
+      </div>
+    </section>
+
+    <!-- Add more sections and content as needed -->
+  </main>
+
+  <div class="lightbox" onclick="closeLightbox()">
+    <div class="lightbox-nav">
+      <button onclick="navigateImage(-1)">&lt;</button>
+      <img id="lightboxImg" src="#" alt="Lightbox Image">
+      <button onclick="navigateImage(1)">&gt;</button>
+    </div>
+  </div>
+
+  <script>
+    const images = ["LakisEntrance.jpg", "psaria.jpg", "bougiourdi.jpg", "melitzana.jpg", "shrimpspaggeti.jpg", "sunset.jpg", "euro2004.jpg", "glikeria.jpg", "margaritis.jpg", "saganaki shrimp.jpg", "vieirinha.jpg", "zeta douka.jpg"];
+
+let currentImageIndex = 0;
+
+function showImages(images) {
+  const gallery = document.getElementById("gallery");
+  images.forEach((image) => {
+    const imageElement = document.createElement("img");
+    imageElement.src = `./images/${image}`;
+    imageElement.alt = image;
+    imageElement.addEventListener("click", function () {
+      openLightbox(`./images/${image}`);
+      currentImageIndex = images.indexOf(image);
+    });
+    gallery.appendChild(imageElement);
+  });
+}
+
+showImages(images);
+
+function openLightbox(imageSrc) {
+  const lightbox = document.querySelector('.lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  lightbox.style.display = 'flex';
+  lightboxImg.src = imageSrc;
+}
+
+function closeLightbox() {
+  const lightbox = document.querySelector('.lightbox');
+  lightbox.style.display = 'none';
+}
+
+function navigateImage(offset) {
+  currentImageIndex += offset;
+  if (currentImageIndex < 0) {
+    currentImageIndex = images.length - 1;
+  } else if (currentImageIndex >= images.length) {
+    currentImageIndex = 0;
+  }
+  const lightboxImg = document.getElementById('lightboxImg');
+  lightboxImg.src = `./images/${images[currentImageIndex]}`;
+}
+
+const lightboxNav = document.querySelector('.lightbox-nav');
+lightboxNav.addEventListener('click', function (event) {
+  event.stopPropagation();
+});
+
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'ArrowLeft') {
+    navigateImage(-1);
+  } else if (event.key === 'ArrowRight') {
+    navigateImage(1);
+  }
+});
+
+  </script>
+
+  <footer>
+    <p>&copy; 2023 Ψαροταβέρνα Ο Λάκης. All rights reserved.</p>
+  </footer>
+  
+</body>
+</html>
+  

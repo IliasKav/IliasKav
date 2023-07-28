@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menu - Seafood Greek Tavern</title>
+  <link rel="stylesheet" type="text/css" href="menu.css" />
+
+  <header>
+    <h1>Explore Our Menu</h1>
+  </header>
+  
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+
+      tabcontent = document.getElementsByClassName('tabcontent');
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = 'none';
+      }
+
+      tablinks = document.getElementsByClassName('tablink');
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(' active', '');
+      }
+
+      document.getElementById(tabName).style.display = 'block';
+      evt.currentTarget.className += ' active';
+    }
+
+    // Set the first tab as active by default
+    document.getElementsByClassName('tablink')[0].click();
+  </script>
+
+</head>
+
+<nav class="navbar">
+  <a class="navbar-brand" href="#">Lakis Tavern</a>
+  <ul class="navbar-links">
+    <li class="navbar-link-item"><a href="index.html">Home</a></li>
+    <li class="navbar-link-item"><a href="about.html">About</a></li>
+    <li class="navbar-link-item"><a href="menu.html">Menu</a></li>
+    <li class="navbar-link-item"><a href="contact.html">Contact</a></li> 
+  </ul>
+</nav>
+
+<body>
+
+  
+
+  <div class="menu-tabs">
+    <button class="tablink active" onclick="openTab(event, 'appetizers')">Appetizers</button>
+    <button class="tablink active" onclick="openTab(event, 'salads')">Salads</button>
+    <button class="tablink" onclick="openTab(event, 'main-dishes')">Main Dishes</button>
+    <button class="tablink" onclick="openTab(event, 'sides')">Sides</button>
+    <button class="tablink" onclick="openTab(event, 'Cheeses')">Cheeses</button>
+  </div>
+
+  <div id="appetizers" class="tabcontent">
+    <h2>Appetizers</h2>
+    <ul>
+      <li>Grilled Octopus</li>
+      <li>Calamari (Fried or Grilled)</li>
+      <li>Red Sweet Peppers</li>
+      <li>Hot Peppers</li>
+      <li>Stuffed Vine Leaves</li>
+      <li>Tzatziki</li>
+      <li>Garlic Sauce</li>
+      <li>Grilled Eggplant</li>
+      <li>Dal</li>
+      <li>Mushrooms</li>
+      <li>Mackerel</li>
+      <li>Anchovies</li>
+
+      <!-- Add more appetizers as needed -->
+    </ul>
+  </div>
+
+  <div id="salads" class="tabcontent">
+    <h2>Salads</h2>
+    <ul>
+      <li>Greek Salad</li>
+      <li>Rocca & Lettuce</li>
+      <li>Tomato Salad</li>
+      <li>Greek Earth</li>
+      <li>Boiled Greens</li>
+      <li>Politiki</li>
+      <li>Beetroot Salad</li>
+      <li>Potato Salad</li>
+      <!-- Add more main dishes as needed -->
+    </ul>
+  </div>
+
+  <div id="main-dishes" class="tabcontent">
+    <h2>Main Dishes</h2>
+    <ul>
+      <li>Mussels in Red Sauce</li>
+      <li>Steamed Mussels</li>
+      <li>Fried Mussels</li>
+      <li>Fried Fish Platter (Mullet or Pikes)</li>
+      <li>Beef/Pork Steak</li>
+      <li>Burger</li>
+      <li>Chicken Fillet</li>
+      <li>Pork/Chicken Souvlaki</li>
+      <li>Meatballs</li>
+      <li>Mix Grill</li>
+      <li>Grilled Squid</li>
+      <li>Stuffed Squid</li>
+      <li>Fried Squid</li>
+      <li>Shrimps in Red Sauce</li>
+      <li>Grilled Shrimps</li>
+      <li>Shrimp Pasta</li>
+      <li>Frutta di Mare</li>
+      <li>Pike</li>
+      <li>Dentex</li>
+      <li>Seabream</li>
+      <li>Bass</li>
+      <li>Red Snapper</li>
+      <!-- Add more main dishes as needed -->
+    </ul>
+  </div>
+
+  <div id="sides" class="tabcontent">
+    <h2>Sides</h2>
+    <ul>
+      <li>Garlic Sauce</li>
+      <li>Tzatziki</li>
+      <li>Cheese Salad</li>
+      <li>Grilled Aubergine</li>
+      <li>White Taramas</li>
+      <!-- Add more sides as needed -->
+    </ul>
+  </div>
+
+  <div id="Cheeses" class="tabcontent">
+    <h2>Cheeses</h2>
+    <ul>
+      <li>Haloumi</li>
+      <li>Tirozouli</li>
+      <li>Fried Feta</li>
+      <li>Fried Kefalotiri</li>
+      <li>Talagani Cheese</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 Ψαροταβέρνα Ο Λάκης. All rights reserved.</p>
+  </footer>
+  
+</body>
+</html>
+
